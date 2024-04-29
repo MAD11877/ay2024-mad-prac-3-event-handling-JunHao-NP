@@ -14,6 +14,8 @@ import android.widget.TextView;
 import android.widget.Button;
 import android.widget.Toast;
 
+import java.util.Random;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -26,8 +28,10 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        Random rand = new Random();
+        int newRandom = rand.nextInt(1000);
         //initialize a new User object
-        User user = new User("John Doe","MAD Developer", 1, false );
+        User user = new User("MAD " + newRandom,"MAD Developer", 1, false );
         //Get the TextViews and Button from the layout
         TextView tvName = findViewById(R.id.helloWorld);
         TextView tvDescription = findViewById(R.id.descriptionTxt);
